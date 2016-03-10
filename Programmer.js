@@ -1,21 +1,19 @@
 
-function Programmer() {
-    this.languages = [];
+function createProgrammer() {
+    var languages = [];
+    function learnNewLanguage(lang) {
+	    languages.push(lang);
+    };
+    function isPragmatic() {
+	return languages.length >= 3
+    }
+    return {
+	learnNewLanguage: learnNewLanguage,
+	isPragmatic: isPragmatic
+    }
 }
 
-var programmer = new Programmer();
-
-Programmer.prototype.learnNewLanguage = function(lang) {
-    console.log(":" + this);
-    this.languages.push(lang);
-};
-
-Programmer.prototype.isPragmatic = function() {
-    return this.languages.length >= 3 ;
-};
-
-var programmer = new Programmer();
-
+var programmer = createProgrammer();
 
 programmer.learnNewLanguage("clojure");
 programmer.learnNewLanguage("java");
@@ -23,12 +21,11 @@ console.log(programmer.isPragmatic());
 programmer.learnNewLanguage("cobol");
 console.log(programmer.isPragmatic());
 
-
-
-
-var p2 = new Programmer();
+var p2 = createProgrammer();
 ["clojure","java","cobol"].forEach(
     p2.learnNewLanguage.bind(p2)
 );
+
+console.log(p2.isPragmatic());
 
 
