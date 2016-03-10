@@ -23,7 +23,7 @@ console.log(programmer.isPragmatic());
 
 var p2 = createProgrammer();
 ["clojure","java","cobol"].forEach(
-    p2.learnNewLanguage.bind(p2)
+    p2.learnNewLanguage
 );
 
 console.log(p2.isPragmatic());
