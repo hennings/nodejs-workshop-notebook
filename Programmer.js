@@ -1,15 +1,9 @@
 
 function createProgrammer() {
     var languages = [];
-    function learnNewLanguage(lang) {
-	    languages.push(lang);
-    };
-    function isPragmatic() {
-	return languages.length >= 3
-    }
     return {
-	learnNewLanguage: learnNewLanguage,
-	isPragmatic: isPragmatic
+	learnNewLanguage: function(l) { languages.push(l); },
+	isPragmatic: function() { return languages.length >= 3 }
     }
 }
 
@@ -18,6 +12,7 @@ var programmer = createProgrammer();
 programmer.learnNewLanguage("clojure");
 programmer.learnNewLanguage("java");
 console.log(programmer.isPragmatic());
+
 programmer.learnNewLanguage("cobol");
 console.log(programmer.isPragmatic());
 
