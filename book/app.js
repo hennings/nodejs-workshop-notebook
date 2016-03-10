@@ -10,7 +10,6 @@ var url = 'mongodb://192.168.99.100:27017/hsws';
 MongoClient.connect(url, function (err, mdb) {
     assert.equal(null, err);
 
-
     var logIt = function (a) {
         return function (req, res, next) {
             console.log(a + " incoming request logged at " + new Date())
