@@ -6,6 +6,7 @@ function Programmer() {
 var programmer = new Programmer();
 
 Programmer.prototype.learnNewLanguage = function(lang) {
+    console.log(":" + this);
     this.languages.push(lang);
 };
 
@@ -23,11 +24,11 @@ programmer.learnNewLanguage("cobol");
 console.log(programmer.isPragmatic());
 
 
-/*
+
 
 var p2 = new Programmer();
 ["clojure","java","cobol"].forEach(
-    p2.learnNewLanguage
+    p2.learnNewLanguage.bind(p2)
 );
 
-*/
+
