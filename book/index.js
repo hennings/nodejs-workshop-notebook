@@ -1,10 +1,11 @@
-var http = require('http')
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function (req, res) {
-    res.end("hello world");
+app.get('/', function (req, res) {
+  res.send('Hello World!');
 });
 
-server.listen(3000, function () {
-    console.log("we're up");
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
 
