@@ -19,7 +19,10 @@ module.exports = function (stockRepository) {
                 catch(next);
         },
         root: function (req, res) {
-            res.json({"home": new Date()})
+            res.json({
+                "home": new Date(),
+                "1337": "42"
+            })
         },
         getCount: function (req, res) {
             stockRepository.getCount(req.params.isbn).then(function (result) {
