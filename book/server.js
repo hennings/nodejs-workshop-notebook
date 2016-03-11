@@ -1,8 +1,10 @@
 
 
-var app = require("./app.js")
+var repo = require("./repo.js")
 
-app.listen(3000, function () {
+var app = require("./app.js")(repo)
+
+app.listen(3001, function () {
     console.log('Example app listening on port 3000!');
 });
 
