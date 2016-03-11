@@ -18,6 +18,9 @@ module.exports = function (stockRepository) {
                 }).
                 catch(next);
         },
+        root: function (req, res) {
+            res.json({"home": new Date()})
+        },
         getCount: function (req, res) {
             stockRepository.getCount(req.params.isbn).then(function (result) {
                 if (result !== null) {

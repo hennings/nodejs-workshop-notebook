@@ -11,6 +11,7 @@ module.exports = function(stockRepository) {
     app.use(bodyParser.json());
     app.use(middleware.logIncoming);
 
+    app.get('/', routes.root)
     app.post('/stock', routes.stockUp);
 
     app.get('/stock', routes.findAll);
