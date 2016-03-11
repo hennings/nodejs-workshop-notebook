@@ -7,8 +7,8 @@ var stage = {
     name: 'deep-powder-books-1337-stage',
     config_vars: {
         NODE_ENV: 'stage'
-    },
-    domains: ['deep-powder-books-1337-stage.herokuapp.com']
+    }
+
 };
 
 var config = _.merge({}, require("./base"), stage);

@@ -7,8 +7,8 @@ var prod = {
     name: 'deep-powder-books-1337',
     config_vars: {
         NODE_ENV: 'production'
-    },
-    domains: ['deep-powder-books-1337.herokuapp.com']
+    }
+
 };
 
 var config = _.merge({}, require("./base"), prod);

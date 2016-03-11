@@ -1,6 +1,9 @@
 # Emacs
 *~
 
+*.iml
+.idea
+
 # Logs
 logs
 *.log
