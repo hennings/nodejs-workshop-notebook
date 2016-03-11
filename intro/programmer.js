@@ -7,6 +7,7 @@ function createProgrammer() {
     }
 }
 
+/*
 var programmer = createProgrammer();
 
 programmer.learnNewLanguage("clojure");
@@ -22,5 +23,4 @@ var p2 = createProgrammer();
 );
 
 console.log(p2.isPragmatic());
-
-
+*/

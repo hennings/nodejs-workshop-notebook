@@ -2,14 +2,21 @@
   "name": "book_inventory",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "1.15.0",
+    "express": "4.13.4",
+    "lodash": "^4.6.1",
+    "mongodb": "^2.1.7"
+  },
+  "devDependencies": {
+    "mocha": "2.4.5",
+    "supertest": "1.2.0"
   }
 }
