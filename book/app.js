@@ -1,34 +1,24 @@
+var express = require('express');
+var bodyParser = require('body-parser');
+var middleware = require('./middleware');
 
-module.exports = function(repo) {
 
-    var express = require('express');
+
+module.exports = function(stockRepository) {
     var app = express();
-    var bodyParser = require('body-parser');
-    var assert = require("assert")
-    var routes = require("./routes.js")(repo)
-    var middleware = require("./middleware.js")
+    var routes = require('./routes')(stockRepository);
 
+    app.use(bodyParser.json());
+    app.use(middleware.logIncoming);
 
-    app.use(middleware.auth);
+    app.post('/stock', routes.stockUp);
 
-    app.use(bodyParser.json())
+    app.get('/stock', routes.findAll);
 
+    app.get('/stock/:isbn', routes.getCount);
 
-    app.get('/', middleware.logIt("second"), routes.root);
-
-    app.post('/stock', routes.stockUp)
-
-    app.get('/stock/:isbn', routes.stockAvailable)
-
-
-    app.get('/dump', routes.dump);
-
-    app.get('/feil', middleware.logIt("second"),routes.feil);
-
-
-    app.use(middleware.clientError)
-    app.use(middleware.err);
+    app.use(middleware.clientError);
+    app.use(middleware.serverError);
 
     return app;
-
-}
+};
