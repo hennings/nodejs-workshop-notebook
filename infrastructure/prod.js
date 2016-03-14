@@ -7,7 +7,8 @@ var prod = {
     name: 'deep-powder-books-1337',
     config_vars: {
         NODE_ENV: 'production'
-    }
+    },
+    log_drains: ['syslog://data.logentries.com:13636']
 
 };
 

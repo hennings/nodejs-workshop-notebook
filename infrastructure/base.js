@@ -14,5 +14,5 @@ module.exports = {
         'http-end-to-end-continue': {enabled: false}
     },
     formation: [{process: 'web', quantity: 1, size: 'Free'}],
-    log_drains: [],
+
 };

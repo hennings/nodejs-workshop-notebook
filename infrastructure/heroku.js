@@ -8,6 +8,8 @@ configurator.export('deep-powder-books-1337').then(function(result) {
 });
 */
 
+
+/*
 var prod = {
     name: 'deep-powder-books-1337',
     region: 'eu',
@@ -16,6 +18,7 @@ var prod = {
     config_vars: {
         NODE_ENV: 'production'
     },
+    log_drains: ['syslog://data.logentries.com:13636'],
     addons: {mongolab: {plan: 'mongolab:sandbox'}},
     collaborators: ['henning@spjelkavik.net', 'sebastian.verheughe@finn.no', 'siri@spjelkavik.net'],
     features: {
@@ -27,7 +30,7 @@ var prod = {
         'http-end-to-end-continue': {enabled: false}
     },
     formation: [{process: 'web', quantity: 1, size: 'Free'}],
-    log_drains: ['syslog://data.logentries.com:13636'],
+
 };
 
 configurator(prod);
@@ -57,3 +60,6 @@ var stage = {
 
 configurator(stage);
 
+// Not in use anymore
+
+*/
